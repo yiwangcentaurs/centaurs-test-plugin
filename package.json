@@ -1,0 +1,48 @@
+{
+  "name": "centaurs-test-plugin",
+  "version": "1.0.0",
+  "description": "A plugin used for server monitoring and testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yiwangcentaurs/centaurs-test-plugin.git"
+  },
+  "keywords": [
+    "centaurs",
+    "server",
+    "monitor",
+    "人马互动",
+    "plugin",
+    "插件",
+    "监控"
+  ],
+  "author": {
+    "name": "Centaurs Technologies Co.",
+    "email": "contanct@qiwu.ai",
+    "url": "https://www.centaurstech.com/"
+  },
+  "contributors": [
+    {
+      "name": "Fangzhou Long",
+      "nickname": "Feli"
+    },
+    {
+      "name": "Yuancheng Zhang",
+      "nickname": "endaye"
+    }
+  ],
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/yiwangcentaurs/centaurs-test-plugin/issues"
+  },
+  "homepage": "https://github.com/yiwangcentaurs/centaurs-test-plugin#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "config": "^1.28.1",
+    "nodemailer": "^4.4.0",
+    "request": "^2.83.0"
+  }
+}
