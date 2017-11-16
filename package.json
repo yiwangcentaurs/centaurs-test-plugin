@@ -4,7 +4,7 @@
   "description": "A plugin used for server monitoring and testing",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",

@@ -10,6 +10,13 @@ describe('plugin', function() {
             assert.equal('test_api', config.app_name);
         });
     });
+
+    describe('#runTest()', function() {
+        it('should run the test in 10 seconds', function(done) {
+            this.timeout(11000);
+            plugin.runTest(done, 10);
+        })
+    });
 });
 
 describe('email', function() {
