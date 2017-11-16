@@ -2,12 +2,33 @@ var assert = require('assert');
 
 var plugin = require('../lib/plugin');
 
-describe('plugin', () => {
-    describe('#getConfig()', () => {
+describe('plugin', function() {
+    describe('#getConfig()', function() {
         it('should return set config content', function() {
             plugin.set('app_name', 'test_api');
             var config = plugin.getConfig()
             assert.equal('test_api', config.app_name);
+        });
+    });
+});
+
+describe('email', function() {
+    describe('#emailLog()', function() {
+        it('try to send an email', function(done) {
+            this.timeout(10000);
+
+            var passed = true;
+            success = function() {
+                done();
+            }
+
+            fail =  function(error) {
+                console.log(error);
+                assert.fail('send email failed');
+                done();
+            };
+
+            plugin.emailClient.emailLog('test title', 'test content', success, fail);
         });
     });
 });
