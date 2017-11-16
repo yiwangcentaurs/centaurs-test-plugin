@@ -24,7 +24,7 @@ plugin.sysCheck(60);
 // run a test and report an error
 plugin.runTest(function(){throw new Error('xxx error');}, 60);
 // send an email
-plugin.emailClient.emailLog('test title', 'test content', funcion(error){ });
+plugin.sendEmail('test title', 'test content', function(){'success'}, function(error){ });
 ~~~~
 
 ## Writing configuration files
