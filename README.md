@@ -2,23 +2,34 @@
 
 ## Adding dependency
 
-`"centaurs-test-plugin": "git+https://github.com/yiwangcentaurs/centaurs-test-plugin.git",`
+Add the following line to package.json
+
+~~~~ json
+"dependencies": {
+    "centaurs-test-plugin": "git+https://github.com/yiwangcentaurs/centaurs-test-plugin.git",
+    ...
+}
+~~~~
 
 ## Using plugin
 
 ~~~~ javascript
 var plugin = require('centaurs-test-plugin');
+// set app name
 plugin.set('app_name', 'xxx_api');
+// show configuration
 plugin.showConfig();
-plugin.sysCheck(2000);
+// send system info at specified intervals
+plugin.sysCheck(60);
+// run a test and report an error
 plugin.runTest(function(){throw new Error('xxx error');}, 60);
-plugin.runTest(function(){console.log();}, 20);
+// send an email
 plugin.emailClient.emailLog('test title', 'test content', funcion(error){ });
 ~~~~
 
 ## Writing configuration files
 
-Email configurations
+Email configurations (save in development.json)
 
 ~~~~ json
 "email": {
@@ -40,11 +51,11 @@ Add the following code to vscode launch.json to feed ENV paramter
 
 Use following commands to feed ENV paramter to forever
 
-`NODE_ENV="production" forever --uid "xxx" -a start xxx.js`
+`user: $ NODE_ENV="production" forever --uid "xxx" -a start xxx.js`
 
 or
 
-`NODE_ENV="production" forever --uid "xxx" -a start -c "npm start" ./`
+`user: $ NODE_ENV="production" forever --uid "xxx" -a start -c "npm start" ./`
 
 ## Test
 
