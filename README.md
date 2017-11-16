@@ -11,8 +11,20 @@ var plugin = require('centaurs-test-plugin');
 plugin.set('app_name', 'xxx_api');
 plugin.showConfig();
 plugin.sysCheck(2000);
-plugin.runTest(function(){throw new Error('xxx error');}, 2000)
-plugin.runTest(function(){console.log();}, 2000)
+plugin.runTest(function(){throw new Error('xxx error');}, 60);
+plugin.runTest(function(){console.log();}, 20);
+plugin.emailClient.emailLog('test title', 'test content', funcion(error){ });
+~~~~
+
+## Writing configuration files
+
+Email configurations
+
+~~~~ yaml
+email:
+    username: xxx@xxx.xxx
+    password: xxxxxxxxx
+    domain: smtp.xxx.com
 ~~~~
 
 ## Loading configurations
