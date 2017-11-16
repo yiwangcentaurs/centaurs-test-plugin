@@ -41,7 +41,7 @@
   "homepage": "https://github.com/yiwangcentaurs/centaurs-test-plugin#readme",
   "dependencies": {
     "colors": "^1.1.2",
-    "config-yml": "^0.8.0",
+    "config": "^0.8.0",
     "nodemailer": "^4.4.0",
     "request": "^2.83.0"
   },
