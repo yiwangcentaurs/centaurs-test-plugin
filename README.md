@@ -32,3 +32,9 @@ Use following commands to feed ENV paramter to forever
 or
 
 `NODE_ENV="production" forever --uid "xxx" -a start -c "npm start" ./`
+
+## Test
+
+Run test cases
+
+`npm test`
