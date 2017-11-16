@@ -20,11 +20,12 @@ plugin.emailClient.emailLog('test title', 'test content', funcion(error){ });
 
 Email configurations
 
-~~~~ yaml
-email:
-    username: xxx@xxx.xxx
-    password: xxxxxxxxx
-    domain: smtp.xxx.com
+~~~~ json
+"email": {
+    "username": "xxx@xxx.xxx",
+    "password": "xxxxxxxxx",
+    "domain": "smtp.xxx.com"
+}
 ~~~~
 
 ## Loading configurations
