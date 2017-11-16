@@ -28,7 +28,7 @@ describe('email', function() {
                 done();
             };
 
-            plugin.emailClient.emailLog('test title', 'test content', success, fail);
+            plugin.sendEmail('test title', 'test content', success, fail);
         });
     });
 });
