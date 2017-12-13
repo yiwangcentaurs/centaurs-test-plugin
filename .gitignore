@@ -59,3 +59,6 @@ typings/
 
 # configuration files
 config/
+
+# VS code auto generated pdf
+README.pdf
