@@ -15,29 +15,58 @@ Add the following line to package.json
 
 ~~~~ javascript
 var plugin = require('centaurs-test-plugin');
+
 // set app name
 plugin.set('app_name', 'xxx_api');
+
 // show configuration
 plugin.showConfig();
+
 // send system info at specified intervals
 plugin.sysCheck(60);
+
 // run a test and report an error
 plugin.runTest(function(){throw new Error('xxx error');}, 60);
+
+// catch and report all expected error traces
+plugin.catchErr();
+
+// record route request time and send to server
+app.use(plugin.timer.start);
+/* CAUTION: all route function need to add
+ * a parameter 'next' to support this plugin, like
+ * exports.route_1 = function (req, res, next) {} */
+app.get('/api/path_1', route_1);
+app.get("/api/path_2", route_2);
+/* ... */
+app.use(plugin.timer.stop);
+
 // send an email
 plugin.sendEmail('test title', 'test content', function(){'success'}, function(error){ });
+
 ~~~~
 
 ## Writing configuration files
 
-Email configurations (save in development.json)
+Make a `config` folder, save configuration file into it.
+
+Email and plugin configurations (save in `development.json`)
 
 ~~~~ json
 "email": {
     "username": "xxx@xxx.xxx",
     "password": "xxxxxxxxx",
     "domain": "smtp.xxx.com"
-}
+},
+"plugin": {
+    "host": "localhost",
+    "port": 10021,
+    "app_name": "xxxx-api"
+},
+"debug": true
 ~~~~
+
+After deployed on serve, make a new configuartion file named `production.json`.
 
 ## Loading configurations
 
