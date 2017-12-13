@@ -38,7 +38,6 @@ app.use(plugin.timer.start);
  * exports.route_1 = function (req, res, next) {} */
 app.get('/api/path_1', route_1);
 app.get("/api/path_2", route_2);
-/* ... */
 app.use(plugin.timer.stop);
 
 // send an email
