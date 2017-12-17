@@ -33,12 +33,18 @@ plugin.catchErr();
 
 // record route request time and send to server
 app.use(plugin.timer.start);
-/* CAUTION: all route function need to add
- * a parameter 'next' to support this plugin, like
- * exports.route_1 = function (req, res, next) {} */
 app.get('/api/path_1', route_1);
 app.get("/api/path_2", route_2);
 app.use(plugin.timer.stop);
+
+/* CAUTION: all route function need to add
+ * a parameter 'next' to support this plugin, e.g. */
+ exports.route_1 = function (req, res, next) {
+     /* do something */
+     if (next) {
+        next();
+     }
+ };
 
 // send an email
 plugin.sendEmail('test title', 'test content', function(){'success'}, function(error){ });
@@ -64,6 +70,8 @@ Email and plugin configurations (save in `development.json`)
 },
 "debug": true
 ~~~~
+
+The `config` folder is ignored, it CANNOT git commit or push to remote.
 
 After deployed on serve, make a new configuartion file named `production.json`.
 
